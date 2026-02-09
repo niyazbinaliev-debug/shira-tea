@@ -3,61 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <title>Shira Tea</title>
+
 <style>
 body{
     margin:0;
-    font-family:Arial, sans-serif;
-    background:linear-gradient(180deg,#1b5e20,#43a047);
+    font-family:Arial;
+    transition:0.5s;
+    background:#1b5e20;
     color:white;
     text-align:center;
 }
+
 .container{
-    padding:80px 20px;
+    padding:50px 20px;
 }
-button{
-    background:#2ecc71;
-    border:none;
-    padding:15px 30px;
+
+.product img{
+    width:220px;
+    transition:0.5s;
+}
+
+.variants img{
+    width:70px;
     margin:10px;
-    font-size:18px;
+    cursor:pointer;
     border-radius:10px;
+    border:2px solid transparent;
+}
+.variants img:hover{
+    border:2px solid white;
+}
+
+select{
+    padding:10px;
+    font-size:16px;
+    margin-top:15px;
+}
+
+button{
+    margin-top:20px;
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    background:#2ecc71;
     cursor:pointer;
 }
-button:hover{
-    background:#27ae60;
-}
-footer{
-    margin-top:60px;
-    font-size:16px;
-}
-a{ color:white; text-decoration:none; }
 </style>
 </head>
 
 <body>
+
 <div class="container">
-    <h1>SHIRA TEA</h1>
-    <p>Натуральный чай. Чистый вкус. Энергия природы.</p>
+<h1>SHIRA TEA</h1>
+<p id="desc">Натуральный зелёный чай</p>
 
-    <img src="img/tea.png" width="200"><br><br>
-
-    <!-- ЗАКАЗ -->
-    <a href="tel:+998901234567">
-        <button>Заказать чай</button>
-    </a>
-
-    <!-- КАРТА -->
-    <a href="https://www.google.com/maps/search/tea+shop" target="_blank">
-        <button>Где купить</button>
-    </a>
-
-    <!-- ОПИСАНИЕ -->
-    <br><br>
-    <a href="about.html">О нашем чае →</a>
-
-    <footer>
-        <p>📞 +998 90 123 45 67</p>
-    </footer>
+<div class="product">
+<img id="teaImg" src="img/tea-green.png">
 </div>
+
+<!-- ГРАММЫ -->
+<select>
+  <option>50 грамм</option>
+  <option>100 грамм</option>
+  <option>250 грамм</option>
+</select>
+
+<br>
+<button>Заказать</button>
+
+<!-- ВЫБОР ЧАЯ -->
+<div class="variants">
+<img src="img/tea-green.png" onclick="changeTea('green')">
+<img src="img/tea-black.png" onclick="changeTea('black')">
+<img src="img/tea-herbal.png" onclick="changeTea('herbal')">
+</div>
+
+</div>
+
+<script>
+function changeTea(type){
+    if(type==="green"){
+        document.body.style.background="#1b5e20";
+        teaImg.src="img/tea-green.png";
+        desc.innerText="Натуральный зелёный чай";
+    }
+    if(type==="black"){
+        document.body.style.background="#3e2723";
+        teaImg.src="img/tea-black.png";
+        desc.innerText="Крепкий чёрный чай";
+    }
+    if(type==="herbal"){
+        document.body.style.background="#33691e";
+        teaImg.src="img/tea-herbal.png";
+        desc.innerText="Травяной расслабляющий чай";
+    }
+}
+</script>
+
 </body>
 </html>
