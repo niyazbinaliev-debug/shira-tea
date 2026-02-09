@@ -1,59 +1,63 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Shira Tea</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(120deg, #1b5e20, #4caf50);
-      color: white;
-      text-align: center;
-    }
-
-    header {
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
-
-    p {
-      font-size: 20px;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .tea {
-      margin-top: 40px;
-    }
-
-    img {
-      width: 300px;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      transition: transform 0.3s;
-    }
-
-    img:hover {
-      transform: scale(1.1);
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Shira Tea</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(180deg,#1b5e20,#43a047);
+    color:white;
+    text-align:center;
+}
+.container{
+    padding:80px 20px;
+}
+button{
+    background:#2ecc71;
+    border:none;
+    padding:15px 30px;
+    margin:10px;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+}
+button:hover{
+    background:#27ae60;
+}
+footer{
+    margin-top:60px;
+    font-size:16px;
+}
+a{ color:white; text-decoration:none; }
+</style>
 </head>
-<body>
 
-  <header>
+<body>
+<div class="container">
     <h1>SHIRA TEA</h1>
     <p>Натуральный чай. Чистый вкус. Энергия природы.</p>
-  </header>
 
-  <div class="tea">
-    <img src="tea.jpg" alt="Shira Tea">
-  </div>
+    <img src="img/tea.png" width="200"><br><br>
 
+    <!-- ЗАКАЗ -->
+    <a href="tel:+998901234567">
+        <button>Заказать чай</button>
+    </a>
+
+    <!-- КАРТА -->
+    <a href="https://www.google.com/maps/search/tea+shop" target="_blank">
+        <button>Где купить</button>
+    </a>
+
+    <!-- ОПИСАНИЕ -->
+    <br><br>
+    <a href="about.html">О нашем чае →</a>
+
+    <footer>
+        <p>📞 +998 90 123 45 67</p>
+    </footer>
+</div>
 </body>
 </html>
