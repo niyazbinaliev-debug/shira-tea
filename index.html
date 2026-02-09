@@ -1,62 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shira Tea</title>
+  <meta charset="UTF-8">
+  <title>Shira Tea</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #1b5e20, #4caf50);
+      color: white;
+      text-align: center;
+    }
 
-    <style>
-        body {
-            body {
-            background: url("bg.jpg") no-repeat center center fixed;    
-            background-size: cover;
-        }
-            color: white;
-            font-family: Arial;
-            text-align: center;
-            padding-top: 100px;
-            min-height: 100vh;
-         img {
-  animation: fadeIn 2s ease;
-         }
+    header {
+      padding: 40px 20px;
+    }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-         }
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
 
-        }
+    p {
+      font-size: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
 
-        button {
-            background: #3cb371;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 20px;
-            cursor: pointer;
-            border-radius: 8px;
-        }
-        button:hover {
-            background: #2a9d5c;
-            transform: scale(1.05);
-        }
+    .tea {
+      margin-top: 40px;
+    }
 
-    </style>
+    img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
-
 <body>
+
+  <header>
     <h1>SHIRA TEA</h1>
-    <img src="tea.jpg" alt="Shira Tea" width="300">
-    <p>Премиальный натуральный чай</p>
+    <p>Натуральный чай. Чистый вкус. Энергия природы.</p>
+  </header>
 
-    <a href="https://t.me/shiratea">
-        <button>Заказать чай</button>
-    <br><br>
+  <div class="tea">
+    <img src="tea.jpg" alt="Shira Tea">
+  </div>
 
-    <a href="https://www.google.com/maps/search/чай+магазин+рядом" target="_blank">
-    <button>Ближайший магазин</button>
-    <a href="tel:+998901234567">📞 Позвонить</a>
-
-    </a>
 </body>
 </html>
