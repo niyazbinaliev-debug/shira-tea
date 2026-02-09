@@ -6,98 +6,136 @@
 
 <style>
 body{
-    margin:0;
-    font-family:Arial;
-    transition:0.5s;
-    background:#1b5e20;
-    color:white;
-    text-align:center;
+  margin:0;
+  font-family:Arial;
+  background:#1b5e20;
+  color:white;
+  transition:0.5s;
+}
+
+header{
+  display:flex;
+  align-items:center;
+  padding:20px;
+}
+header img{
+  width:40px;
+  margin-right:10px;
 }
 
 .container{
-    padding:50px 20px;
+  text-align:center;
+  padding:30px;
 }
 
 .product img{
-    width:220px;
-    transition:0.5s;
+  width:220px;
+  transition:0.5s;
 }
 
 .variants img{
-    width:70px;
-    margin:10px;
-    cursor:pointer;
-    border-radius:10px;
-    border:2px solid transparent;
+  width:70px;
+  margin:10px;
+  cursor:pointer;
+  border-radius:10px;
+  border:2px solid transparent;
 }
 .variants img:hover{
-    border:2px solid white;
+  border-color:white;
 }
 
-select{
-    padding:10px;
-    font-size:16px;
-    margin-top:15px;
+.grams button{
+  margin:10px;
+  padding:10px 20px;
+  font-size:16px;
+  cursor:pointer;
+  border:none;
+  border-radius:10px;
 }
 
-button{
-    margin-top:20px;
-    padding:15px 30px;
-    font-size:18px;
-    border:none;
-    border-radius:10px;
-    background:#2ecc71;
-    cursor:pointer;
+.price{
+  font-size:24px;
+  margin:20px;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+}
+
+footer a{
+  display:inline-block;
+  margin:10px;
+  padding:15px 25px;
+  background:#2ecc71;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
 }
 </style>
 </head>
 
 <body>
 
+<header>
+<img src="img/logo.png">
+<h2>SHIRA</h2>
+</header>
+
 <div class="container">
 <h1>SHIRA TEA</h1>
-<p id="desc">Натуральный зелёный чай</p>
+<p id="desc">
+Зелёный чай Shira — это чистая энергия природы. Он бодрит, очищает организм и подходит для ежедневного употребления.
+</p>
 
 <div class="product">
-<img id="teaImg" src="img/tea-green.png">
+<img id="teaImg" src="img/green.png">
 </div>
 
 <!-- ГРАММЫ -->
-<select>
-  <option>50 грамм</option>
-  <option>100 грамм</option>
-  <option>250 грамм</option>
-</select>
+<div class="grams">
+<button onclick="setPrice(10000)">50 г</button>
+<button onclick="setPrice(15000)">100 г</button>
+<button onclick="setPrice(20000)">150 г</button>
+</div>
 
-<br>
-<button>Заказать</button>
+<div class="price" id="price">Цена: 10 000</div>
 
-<!-- ВЫБОР ЧАЯ -->
+<!-- ЧАЙ -->
 <div class="variants">
-<img src="img/tea-green.png" onclick="changeTea('green')">
-<img src="img/tea-black.png" onclick="changeTea('black')">
-<img src="img/tea-herbal.png" onclick="changeTea('herbal')">
+<img src="img/red.png" onclick="changeTea('red')">
+<img src="img/green.png" onclick="changeTea('green')">
+<img src="img/yellow.png" onclick="changeTea('yellow')">
+</div>
 </div>
 
-</div>
+<footer>
+<a href="https://t.me/yourtelegram">Заказать в Telegram</a>
+<a href="tel:+998901234567">Позвонить</a>
+<a href="https://www.google.com/maps">Где купить</a>
+</footer>
 
 <script>
+function setPrice(p){
+  document.getElementById("price").innerText="Цена: "+p.toLocaleString();
+}
+
 function changeTea(type){
-    if(type==="green"){
-        document.body.style.background="#1b5e20";
-        teaImg.src="img/tea-green.png";
-        desc.innerText="Натуральный зелёный чай";
-    }
-    if(type==="black"){
-        document.body.style.background="#3e2723";
-        teaImg.src="img/tea-black.png";
-        desc.innerText="Крепкий чёрный чай";
-    }
-    if(type==="herbal"){
-        document.body.style.background="#33691e";
-        teaImg.src="img/tea-herbal.png";
-        desc.innerText="Травяной расслабляющий чай";
-    }
+  if(type==="green"){
+    document.body.style.background="#1b5e20";
+    teaImg.src="img/green.png";
+    desc.innerText="Зелёный чай Shira — натуральный продукт для бодрости, ясного ума и чистоты организма.";
+  }
+  if(type==="red"){
+    document.body.style.background="#6a1b1a";
+    teaImg.src="img/red.png";
+    desc.innerText="Красный чай Shira — насыщенный вкус, согревающий эффект и глубокий аромат.";
+  }
+  if(type==="yellow"){
+    document.body.style.background="#f9a825";
+    teaImg.src="img/yellow.png";
+    desc.innerText="Жёлтый чай Shira — редкий сорт, мягкое действие, баланс энергии и спокойствие.";
+  }
 }
 </script>
 
