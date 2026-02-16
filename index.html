@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BAYCI TEA</title>
+<title>BAYCE TEA</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;scroll-behavior:smooth;}
 body{transition:0.6s;background:#1b5e20;color:white;overflow-x:hidden;}
 
+/* SECTION */
 section{
 height:100vh;
 display:flex;
@@ -22,26 +23,26 @@ position:relative;
 
 /* LOGO */
 .logo{
-font-size:42px;
-letter-spacing:6px;
+font-size:44px;
+letter-spacing:8px;
 font-weight:bold;
-margin-bottom:25px;
+margin-bottom:30px;
 animation:fadeDown 1s ease;
 }
 
-/* MAIN LAYOUT */
-.wrapper{
+/* LAYOUT */
+.container{
 max-width:1100px;
 display:flex;
 align-items:center;
 justify-content:center;
-gap:60px;
+gap:70px;
 flex-wrap:wrap;
 }
 
 /* TEXT */
 .text{
-max-width:480px;
+max-width:500px;
 animation:fadeLeft 1s ease;
 }
 
@@ -49,12 +50,14 @@ animation:fadeLeft 1s ease;
 .text p{font-size:17px;line-height:1.7;margin-bottom:20px;}
 
 /* IMAGE */
-.visual{animation:fadeRight 1s ease;}
-.visual img{
-width:320px;
-border-radius:18px;
+.image{
+animation:fadeRight 1s ease;
+}
+.image img{
+width:340px;
+border-radius:20px;
 transition:0.5s;
-box-shadow:0 20px 50px rgba(0,0,0,0.4);
+box-shadow:0 25px 60px rgba(0,0,0,0.5);
 }
 
 /* COLORS */
@@ -64,10 +67,9 @@ justify-content:center;
 gap:15px;
 margin-bottom:15px;
 }
-
 .color{
-width:48px;
-height:48px;
+width:50px;
+height:50px;
 border-radius:50%;
 cursor:pointer;
 border:3px solid white;
@@ -80,7 +82,7 @@ transition:0.3s;
 
 /* SIZE */
 .size button{
-padding:9px 20px;
+padding:10px 22px;
 margin:6px;
 border:none;
 cursor:pointer;
@@ -90,7 +92,7 @@ transition:0.3s;
 .active{background:black;color:white;}
 
 .price{
-font-size:26px;
+font-size:28px;
 margin-top:15px;
 font-weight:bold;
 }
@@ -107,9 +109,9 @@ gap:15px;
 .contact a{
 display:inline-flex;
 align-items:center;
-gap:8px;
-padding:12px 22px;
-border-radius:30px;
+gap:10px;
+padding:14px 24px;
+border-radius:40px;
 text-decoration:none;
 font-weight:bold;
 transition:0.4s;
@@ -131,11 +133,11 @@ animation:pulseGreen 2s infinite;
 
 /* QR */
 .qr{
-margin-top:25px;
+margin-top:30px;
 }
 .qr img{
-width:150px;
-border-radius:10px;
+width:160px;
+border-radius:12px;
 }
 
 /* SECOND PAGE */
@@ -148,7 +150,7 @@ background-attachment:fixed;
 content:"";
 position:absolute;
 inset:0;
-background:rgba(0,0,0,0.65);
+background:rgba(0,0,0,0.7);
 }
 .second-content{
 position:relative;
@@ -161,13 +163,23 @@ animation:fadeUp 1s ease;
 @keyframes fadeLeft{from{opacity:0;transform:translateX(-80px);}to{opacity:1;transform:translateX(0);}}
 @keyframes fadeRight{from{opacity:0;transform:translateX(80px);}to{opacity:1;transform:translateX(0);}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(80px);}to{opacity:1;transform:translateY(0);}}
-@keyframes pulseBlue{0%{box-shadow:0 0 0 0 rgba(0,136,204,0.7);}70%{box-shadow:0 0 0 15px rgba(0,136,204,0);}100%{box-shadow:0 0 0 0 rgba(0,136,204,0);}}
-@keyframes pulseGreen{0%{box-shadow:0 0 0 0 rgba(46,125,50,0.7);}70%{box-shadow:0 0 0 15px rgba(46,125,50,0);}100%{box-shadow:0 0 0 0 rgba(46,125,50,0);}}
+
+@keyframes pulseBlue{
+0%{box-shadow:0 0 0 0 rgba(0,136,204,0.7);}
+70%{box-shadow:0 0 0 18px rgba(0,136,204,0);}
+100%{box-shadow:0 0 0 0 rgba(0,136,204,0);}
+}
+
+@keyframes pulseGreen{
+0%{box-shadow:0 0 0 0 rgba(46,125,50,0.7);}
+70%{box-shadow:0 0 0 18px rgba(46,125,50,0);}
+100%{box-shadow:0 0 0 0 rgba(46,125,50,0);}
+}
 
 /* MOBILE */
 @media(max-width:768px){
-.wrapper{flex-direction:column;}
-.visual img{width:240px;}
+.container{flex-direction:column;}
+.image img{width:240px;}
 }
 </style>
 </head>
@@ -177,17 +189,18 @@ animation:fadeUp 1s ease;
 <!-- PAGE 1 -->
 <section>
 
-<div class="logo">BAYCI TEA 🇹🇷</div>
+<div class="logo">BAYCE TEA 🇹🇷</div>
 
-<div class="wrapper">
+<div class="container">
 
 <div class="text">
 <h2 id="name">Зелёный чай №95 🍃</h2>
+
 <p id="desc">
-BAYCI TEA — премиальный турецкий чай высокого качества. 
-Зелёный чай №95 отличается мягким вкусом, богатым ароматом и полезными свойствами. 
-Содержит природные антиоксиданты, поддерживает иммунитет и придаёт лёгкость организму. 
-Идеален для ежедневного чаепития и здорового образа жизни.
+BAYCE — премиальный турецкий чай высшего качества. 
+Зелёный чай №95 отличается мягким вкусом, природной свежестью и насыщенным ароматом. 
+Содержит антиоксиданты, поддерживает иммунитет и придаёт лёгкость. 
+Идеален для ежедневного употребления и здорового образа жизни.
 </p>
 
 <div class="colors">
@@ -204,7 +217,7 @@ BAYCI TEA — премиальный турецкий чай высокого к
 <div class="price" id="price">12 000 сум</div>
 </div>
 
-<div class="visual">
+<div class="image">
 <img id="teaImage" src="green.jpg">
 </div>
 
@@ -219,13 +232,13 @@ BAYCI TEA — премиальный турецкий чай высокого к
 
 <div class="second-content">
 
-<h2>О чае BAYCI ☕</h2>
+<h2>О чае BAYCE ☕</h2>
 
 <p id="about">
-BAYCI TEA — это натуральный турецкий чай премиального уровня. 
+BAYCE TEA — это натуральный турецкий чай премиального уровня. 
 Красный чай 🔥 обладает насыщенным вкусом и бодрящим эффектом. 
 Зелёный чай 🍃 укрепляет иммунитет и освежает организм. 
-Жёлтый чай 🌿 имеет мягкий аромат и гармоничный вкус, идеально подходит для спокойного отдыха. 
+Жёлтый чай 🌿 имеет мягкий аромат и гармоничный вкус. 
 Каждый сорт проходит строгий контроль качества и сохраняет традиции турецкого чаепития.
 </p>
 
@@ -236,7 +249,7 @@ BAYCI TEA — это натуральный турецкий чай премиа
 
 <div class="qr">
 <p>📲 Сканируй QR для мобильной версии</p>
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://t.me/yourchannel">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://t.me/yourchannel">
 </div>
 
 </div>
@@ -261,16 +274,16 @@ let about=document.getElementById("about");
 let img=document.getElementById("teaImage");
 let second=document.getElementById("secondPage");
 
-img.style.transform="scale(0.8)";
 img.style.opacity=0;
+img.style.transform="scale(0.85)";
 
 setTimeout(()=>{
 
 if(color=="red"){
 document.body.style.background="#c62828";
 name.innerText="Красный чай 🔥";
-desc.innerText="Насыщенный крепкий вкус с глубоким ароматом. Придаёт энергию и бодрость на весь день.";
-about.innerText="Красный чай BAYCI обладает ярким вкусом и крепким ароматом. Отлично бодрит и поддерживает активность.";
+desc.innerText="Насыщенный крепкий вкус и глубокий аромат. Придаёт энергию и бодрость.";
+about.innerText="Красный чай BAYCE отличается крепостью и насыщенным вкусом. Отлично бодрит.";
 img.src="red.jpg";
 second.style.backgroundImage="url('red.jpg')";
 }
@@ -279,7 +292,7 @@ if(color=="green"){
 document.body.style.background="#1b5e20";
 name.innerText="Зелёный чай №95 🍃";
 desc.innerText="Свежий натуральный вкус. Поддерживает здоровье и гармонию организма.";
-about.innerText="Зелёный чай №95 — напиток здоровья. Содержит антиоксиданты и укрепляет иммунитет.";
+about.innerText="Зелёный чай №95 — напиток здоровья с мягким вкусом и ароматом.";
 img.src="green.jpg";
 second.style.backgroundImage="url('green.jpg')";
 }
@@ -287,14 +300,14 @@ second.style.backgroundImage="url('green.jpg')";
 if(color=="yellow"){
 document.body.style.background="#f9a825";
 name.innerText="Жёлтый чай 🌿";
-desc.innerText="Мягкий сбалансированный вкус и лёгкий аромат для спокойного отдыха.";
-about.innerText="Жёлтый чай BAYCI имеет мягкий вкус и приятный аромат. Идеален для вечернего чаепития.";
+desc.innerText="Мягкий вкус и деликатный аромат для спокойного отдыха.";
+about.innerText="Жёлтый чай BAYCE имеет мягкий вкус и приятный аромат.";
 img.src="yellow.jpg";
 second.style.backgroundImage="url('yellow.jpg')";
 }
 
-img.style.transform="scale(1)";
 img.style.opacity=1;
+img.style.transform="scale(1)";
 
 },300);
 }
