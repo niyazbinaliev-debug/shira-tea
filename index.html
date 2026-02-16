@@ -5,11 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BAYCE TEA</title>
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;scroll-behavior:smooth;}
-body{transition:0.6s;background:#1b5e20;color:white;overflow-x:hidden;}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
 
-/* SECTION */
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+overflow-x:hidden;
+background:#111;
+color:white;
+}
+
 section{
 height:100vh;
 display:flex;
@@ -17,300 +29,264 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:40px 20px;
 position:relative;
+padding:40px;
+transition:0.6s;
 }
 
-/* LOGO */
+/* ---------- FIRST SCREEN ---------- */
+
+#home{
+background:linear-gradient(135deg,#8b0000,#111);
+}
+
 .logo{
-font-size:44px;
-letter-spacing:8px;
-font-weight:bold;
-margin-bottom:30px;
-animation:fadeDown 1s ease;
+position:absolute;
+top:20px;
+left:20px;
+width:80px;
+animation:fadeIn 1.5s ease;
 }
 
-/* LAYOUT */
-.container{
-max-width:1100px;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:70px;
-flex-wrap:wrap;
+h1{
+font-size:48px;
+font-weight:800;
+letter-spacing:4px;
+margin-bottom:20px;
+animation:fadeIn 1.5s ease;
 }
 
-/* TEXT */
-.text{
-max-width:500px;
-animation:fadeLeft 1s ease;
+.tea-image{
+width:280px;
+transition:0.6s;
+animation:float 3s infinite ease-in-out;
 }
 
-.text h2{font-size:30px;margin-bottom:15px;}
-.text p{font-size:17px;line-height:1.7;margin-bottom:20px;}
-
-/* IMAGE */
-.image{
-animation:fadeRight 1s ease;
-}
-.image img{
-width:340px;
-border-radius:20px;
-transition:0.5s;
-box-shadow:0 25px 60px rgba(0,0,0,0.5);
-}
-
-/* COLORS */
 .colors{
-display:flex;
-justify-content:center;
-gap:15px;
-margin-bottom:15px;
-}
-.color{
-width:50px;
-height:50px;
-border-radius:50%;
-cursor:pointer;
-border:3px solid white;
-transition:0.3s;
-}
-.color:hover{transform:scale(1.2);}
-.red{background:#c62828;}
-.green{background:#1b5e20;}
-.yellow{background:#f9a825;}
-
-/* SIZE */
-.size button{
-padding:10px 22px;
-margin:6px;
-border:none;
-cursor:pointer;
-font-weight:bold;
-transition:0.3s;
-}
-.active{background:black;color:white;}
-
-.price{
-font-size:28px;
-margin-top:15px;
-font-weight:bold;
-}
-
-/* CONTACT */
-.contact{
 margin-top:30px;
 display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
+gap:20px;
+}
+
+.color-btn{
+width:40px;
+height:40px;
+border-radius:50%;
+cursor:pointer;
+transition:0.3s;
+border:3px solid white;
+}
+
+.color-btn:hover{
+transform:scale(1.2);
+}
+
+.red{background:red;}
+.green{background:green;}
+.yellow{background:gold;}
+
+.weight{
+margin-top:20px;
+display:flex;
+gap:20px;
+}
+
+.weight button{
+padding:10px 20px;
+border:none;
+cursor:pointer;
+font-weight:600;
+border-radius:20px;
+transition:0.3s;
+}
+
+.price{
+margin-top:15px;
+font-size:22px;
+font-weight:600;
+}
+
+.contact{
+position:absolute;
+bottom:30px;
+display:flex;
+gap:40px;
 }
 
 .contact a{
-display:inline-flex;
-align-items:center;
-gap:10px;
-padding:14px 24px;
-border-radius:40px;
 text-decoration:none;
-font-weight:bold;
-transition:0.4s;
+font-weight:600;
+transition:0.3s;
 }
 
 .telegram{
-background:#0088cc;
-color:white;
-animation:pulseBlue 2s infinite;
+color:#0088cc;
 }
 
 .phone{
-background:#2e7d32;
-color:white;
-animation:pulseGreen 2s infinite;
+color:#00cc44;
 }
 
-.contact a:hover{transform:scale(1.1);}
-
-/* QR */
-.qr{
-margin-top:30px;
-}
-.qr img{
-width:160px;
-border-radius:12px;
+.contact a:hover{
+transform:scale(1.1);
 }
 
-/* SECOND PAGE */
-.second{
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
+/* ---------- SECOND SCREEN ---------- */
+
+#about{
+background:url('https://images.unsplash.com/photo-1518972559570-7cc1309f3229') center/cover no-repeat;
+backdrop-filter:blur(5px);
 }
-.second::before{
-content:"";
-position:absolute;
-inset:0;
+
+.overlay{
 background:rgba(0,0,0,0.7);
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:0;
 }
-.second-content{
+
+.content{
 position:relative;
-max-width:900px;
-animation:fadeUp 1s ease;
+z-index:2;
+max-width:700px;
 }
 
-/* ANIMATIONS */
-@keyframes fadeDown{from{opacity:0;transform:translateY(-60px);}to{opacity:1;transform:translateY(0);}}
-@keyframes fadeLeft{from{opacity:0;transform:translateX(-80px);}to{opacity:1;transform:translateX(0);}}
-@keyframes fadeRight{from{opacity:0;transform:translateX(80px);}to{opacity:1;transform:translateX(0);}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(80px);}to{opacity:1;transform:translateY(0);}}
-
-@keyframes pulseBlue{
-0%{box-shadow:0 0 0 0 rgba(0,136,204,0.7);}
-70%{box-shadow:0 0 0 18px rgba(0,136,204,0);}
-100%{box-shadow:0 0 0 0 rgba(0,136,204,0);}
+.description{
+margin:20px 0;
+font-size:16px;
+line-height:1.6;
 }
 
-@keyframes pulseGreen{
-0%{box-shadow:0 0 0 0 rgba(46,125,50,0.7);}
-70%{box-shadow:0 0 0 18px rgba(46,125,50,0);}
-100%{box-shadow:0 0 0 0 rgba(46,125,50,0);}
+.qr{
+margin-top:20px;
+animation:rotateQR 5s linear infinite;
+width:150px;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes rotateQR{
+from{transform:rotate(0);}
+to{transform:rotate(360deg);}
 }
 
 /* MOBILE */
+
 @media(max-width:768px){
-.container{flex-direction:column;}
-.image img{width:240px;}
+h1{font-size:32px;}
+.tea-image{width:200px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- PAGE 1 -->
-<section>
+<!-- SOUND -->
+<audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
 
-<div class="logo">BAYCE TEA 🇹🇷</div>
+<!-- FIRST SCREEN -->
+<section id="home">
 
-<div class="container">
+<img src="logo.png" class="logo">
 
-<div class="text">
-<h2 id="name">Зелёный чай №95 🍃</h2>
+<h1>BAYCE TEA</h1>
 
-<p id="desc">
-BAYCE — премиальный турецкий чай высшего качества. 
-Зелёный чай №95 отличается мягким вкусом, природной свежестью и насыщенным ароматом. 
-Содержит антиоксиданты, поддерживает иммунитет и придаёт лёгкость. 
-Идеален для ежедневного употребления и здорового образа жизни.
-</p>
+<img src="red.png" id="teaImg" class="tea-image">
 
 <div class="colors">
-<div class="color red" onclick="changeTea('red')"></div>
-<div class="color green" onclick="changeTea('green')"></div>
-<div class="color yellow" onclick="changeTea('yellow')"></div>
+<div class="color-btn red" onclick="changeTea('red')"></div>
+<div class="color-btn green" onclick="changeTea('green')"></div>
+<div class="color-btn yellow" onclick="changeTea('yellow')"></div>
 </div>
 
-<div class="size">
-<button onclick="setSize(50)" class="active">50г</button>
-<button onclick="setSize(150)">150г</button>
+<div class="weight">
+<button onclick="changeWeight(50)">50 гр</button>
+<button onclick="changeWeight(150)">150 гр</button>
 </div>
 
-<div class="price" id="price">12 000 сум</div>
-</div>
+<div class="price" id="price">Цена: 12 000 сум</div>
 
-<div class="image">
-<img id="teaImage" src="green.jpg">
+<div class="contact">
+<a href="https://t.me/yourchannel" class="telegram">📩 Telegram</a>
+<a href="tel:+998901234567" class="phone">📞 +998 90 123 45 67</a>
 </div>
-
-</div>
-
-<div style="margin-top:50px;">⬇ Листай вниз ⬇</div>
 
 </section>
 
-<!-- PAGE 2 -->
-<section class="second" id="secondPage" style="background-image:url('green.jpg')">
+<!-- SECOND SCREEN -->
+<section id="about">
+<div class="overlay"></div>
+<div class="content">
 
-<div class="second-content">
+<h1>О BAYCE TEA</h1>
 
-<h2>О чае BAYCE ☕</h2>
+<div class="description">
+BAYCE TEA — настоящий турецкий чай премиального качества.  
+Красный — насыщенный, крепкий, бодрящий.  
+Зелёный — лёгкий, свежий, натуральный.  
+Жёлтый — мягкий вкус с медовыми нотами.  
 
-<p id="about">
-BAYCE TEA — это натуральный турецкий чай премиального уровня. 
-Красный чай 🔥 обладает насыщенным вкусом и бодрящим эффектом. 
-Зелёный чай 🍃 укрепляет иммунитет и освежает организм. 
-Жёлтый чай 🌿 имеет мягкий аромат и гармоничный вкус. 
-Каждый сорт проходит строгий контроль качества и сохраняет традиции турецкого чаепития.
-</p>
+Каждая упаковка сохраняет аромат и традиции Турции 🇹🇷  
+Выберите 50г или 150г — идеальный формат для дома или подарка.
+</div>
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://yourwebsite.com" class="qr">
 
 <div class="contact">
 <a href="https://t.me/yourchannel" class="telegram">📩 Telegram заказ</a>
 <a href="tel:+998901234567" class="phone">📞 Позвонить</a>
 </div>
 
-<div class="qr">
-<p>📲 Сканируй QR для мобильной версии</p>
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://t.me/yourchannel">
 </div>
-
-</div>
-
 </section>
 
 <script>
-let size=50;
 
-function setSize(s){
-size=s;
-document.querySelectorAll(".size button").forEach(b=>b.classList.remove("active"));
-event.target.classList.add("active");
-document.getElementById("price").innerText = size==50 ? "12 000 сум" : "25 000 сум";
-}
+let currentWeight = 50;
 
 function changeTea(color){
+document.getElementById('clickSound').play();
 
-let name=document.getElementById("name");
-let desc=document.getElementById("desc");
-let about=document.getElementById("about");
-let img=document.getElementById("teaImage");
-let second=document.getElementById("secondPage");
-
-img.style.opacity=0;
-img.style.transform="scale(0.85)";
+let img = document.getElementById('teaImg');
+img.style.opacity = 0;
 
 setTimeout(()=>{
+img.src = color + ".png";
+img.style.opacity = 1;
+},300);
 
 if(color=="red"){
-document.body.style.background="#c62828";
-name.innerText="Красный чай 🔥";
-desc.innerText="Насыщенный крепкий вкус и глубокий аромат. Придаёт энергию и бодрость.";
-about.innerText="Красный чай BAYCE отличается крепостью и насыщенным вкусом. Отлично бодрит.";
-img.src="red.jpg";
-second.style.backgroundImage="url('red.jpg')";
+document.getElementById('home').style.background="linear-gradient(135deg,#8b0000,#111)";
 }
-
 if(color=="green"){
-document.body.style.background="#1b5e20";
-name.innerText="Зелёный чай №95 🍃";
-desc.innerText="Свежий натуральный вкус. Поддерживает здоровье и гармонию организма.";
-about.innerText="Зелёный чай №95 — напиток здоровья с мягким вкусом и ароматом.";
-img.src="green.jpg";
-second.style.backgroundImage="url('green.jpg')";
+document.getElementById('home').style.background="linear-gradient(135deg,#006400,#111)";
 }
-
 if(color=="yellow"){
-document.body.style.background="#f9a825";
-name.innerText="Жёлтый чай 🌿";
-desc.innerText="Мягкий вкус и деликатный аромат для спокойного отдыха.";
-about.innerText="Жёлтый чай BAYCE имеет мягкий вкус и приятный аромат.";
-img.src="yellow.jpg";
-second.style.backgroundImage="url('yellow.jpg')";
+document.getElementById('home').style.background="linear-gradient(135deg,#b8860b,#111)";
+}
 }
 
-img.style.opacity=1;
-img.style.transform="scale(1)";
-
-},300);
+function changeWeight(weight){
+document.getElementById('clickSound').play();
+currentWeight = weight;
+if(weight==50){
+document.getElementById('price').innerText="Цена: 12 000 сум";
+}else{
+document.getElementById('price').innerText="Цена: 25 000 сум";
 }
+}
+
 </script>
 
 </body>
